@@ -30,13 +30,13 @@ const EntryForm = ({ title, car, handleOnClose }) => {
 
   const errorAlRegistrar = (mensaje) => {
     if (
-      placa == "" ||
-      marca == "" ||
-      nombreConductor == "" ||
-      numeroCelular == 0 ||
-      fechaIngreso == "" ||
-      horaIngreso == "" ||
-      servicios == []
+      placa === "" ||
+      marca === "" ||
+      nombreConductor === "" ||
+      numeroCelular === 0 ||
+      fechaIngreso === "" ||
+      horaIngreso === "" ||
+      servicios === []
     ) {
       swal({
         title: "¡Datos faltantes!",

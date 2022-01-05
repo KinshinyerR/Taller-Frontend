@@ -69,7 +69,7 @@ export const ExitForm = ({ title, car, handleOnClose }) => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    if (fechaSalida == "" || horaSalida == "") {
+    if (fechaSalida === "" || horaSalida === "") {
       swal({
         title: "¡Datos faltantes!",
         text: "Todos los datos del formulario son obligatorios para el registro de salida",
