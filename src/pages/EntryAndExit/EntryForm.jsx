@@ -15,7 +15,14 @@ const EntryForm = ({ title, car, handleOnClose }) => {
     horaIngreso: car ? car.horaIngreso : "",
     servicios: car
       ? car.servicios
-      : [{ precioServicio: "", nombreServicio: "", cantidad: "" }],
+      : [
+          {
+            precioServicio: "",
+            nombreServicio: "",
+            precioRepuestos: "",
+            nombreRepuestos: "",
+          },
+        ],
   });
 
   const {
@@ -115,7 +122,12 @@ const EntryForm = ({ title, car, handleOnClose }) => {
               fechaIngreso: "",
               horaIngreso: "",
               servicios: [
-                { precioServicio: "", nombreServicio: "", cantidad: "" },
+                {
+                  precioServicio: "",
+                  nombreServicio: "",
+                  precioRepuestos: "",
+                  nombreRepuestos: "",
+                },
               ],
             });
             swal({
@@ -146,7 +158,9 @@ const EntryForm = ({ title, car, handleOnClose }) => {
           disabled={car ? true : false}
           onChange={handleOnChange}
         />
-        <label className={car ? "text-dark" : "text-white"} htmlFor="placa">Placa</label>
+        <label className={car ? "text-dark" : "text-white"} htmlFor="placa">
+          Placa
+        </label>
       </div>
 
       <div className="form-floating py-2">
@@ -262,16 +276,30 @@ const EntryForm = ({ title, car, handleOnClose }) => {
 
           <div className="form-floating py-2">
             <input
-              type="number"
+              type="text"
               className="form-control"
-              id="cantidad"
-              placeholder="cantidad"
-              name="cantidad"
-              value={servicio.cantidad}
+              id="nombreRepuestos"
+              placeholder="nombreRepuestos"
+              name="nombreRepuestos"
+              value={servicio.nombreRepuestos}
               onChange={(e) => handleOnChangeServices(e, index)}
             />
-            <label htmlFor="cantidad">Cantidad</label>
+            <label htmlFor="nombreRepuestos">Repuestos</label>
           </div>
+
+          <div className="form-floating py-2">
+            <input
+              type="number"
+              className="form-control"
+              id="precioRepuestos"
+              placeholder="precioRepuestos"
+              name="precioRepuestos"
+              value={servicio.precioRepuestos}
+              onChange={(e) => handleOnChangeServices(e, index)}
+            />
+            <label htmlFor="precioRepuestos">Valor repuestos</label>
+          </div>
+
           <button
             onClick={() => handleOnDeleteServicio(index)}
             type="button"

@@ -14,17 +14,6 @@ function App() {
         <Route exact path="/servicios" element={<Servicios />} />
       </Routes>
     </Router>
-
-    // <>
-    //   <h1>Entrada y salida de CARROS</h1>
-    //   <div className="container">
-    //     <div className="row">
-    //       <div className="one-half column">
-    //         <EntryAndExit />
-    //       </div>
-    //     </div>
-    //   </div>
-    // </>
   );
 }
 

@@ -12,7 +12,14 @@ export const ExitForm = ({ title, car, handleOnClose }) => {
     horaIngreso: car ? car.carsDB.horaIngreso : "",
     servicios: car
       ? car.carsDB.servicios
-      : [{ precioServicio: "", nombreServicio: "", cantidad: "" }],
+      : [
+          {
+            precioServicio: "",
+            nombreServicio: "",
+            precioRepuestos: "",
+            nombreRepuestos: "",
+          },
+        ],
     fechaSalida: "",
     horaSalida: "",
     total: car ? car.total : "",
@@ -219,16 +226,30 @@ export const ExitForm = ({ title, car, handleOnClose }) => {
 
           <div className="form-floating mb-3">
             <input
-              type="number"
+              type="text"
               className="form-control"
-              id="cantidad"
-              placeholder="cantidad"
-              name="cantidad"
-              value={servicio.cantidad}
+              id="nombreRepuestos"
+              placeholder="nombreRepuestos"
+              name="nombreRepuestos"
+              value={servicio.nombreRepuestos}
               onChange={(e) => handleOnChangeServices(e, index)}
             />
-            <label htmlFor="cantidad">Cantidad</label>
+            <label htmlFor="nombreRepuestos">Repuestos</label>
           </div>
+
+          <div className="form-floating mb-3">
+            <input
+              type="number"
+              className="form-control"
+              id="precioRepuestos"
+              placeholder="precioRepuestos"
+              name="precioRepuestos"
+              value={servicio.precioRepuestos}
+              onChange={(e) => handleOnChangeServices(e, index)}
+            />
+            <label htmlFor="precioRepuestos">Valor repuestos</label>
+          </div>
+
           <button
             onClick={() => handleOnDeleteServicio(index)}
             type="button"
