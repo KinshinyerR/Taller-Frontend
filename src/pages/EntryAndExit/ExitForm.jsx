@@ -103,14 +103,17 @@ export const ExitForm = ({ title, car, handleOnClose }) => {
       <div className="form-floating mb-3">
         <input
           type="text"
-          className="form-control"
+          className={car ? "form-control text-dark" : "form-control"}
           id="placa"
           placeholder="placa"
           name="placa"
           value={placa}
+          disabled={car ? true : false}
           onChange={handleOnChange}
         />
-        <label htmlFor="placa">Placa</label>
+        <label className={car ? "text-dark" : "text-white"} htmlFor="placa">
+          Placa
+        </label>
       </div>
 
       <div className="form-floating mb-3">
